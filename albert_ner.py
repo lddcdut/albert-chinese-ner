@@ -202,22 +202,27 @@ class DataProcessor(object):
       labels = []
       for line in f:
         contends = line.strip()
-        word = line.strip().split(' ')[0]
-        label = line.strip().split(' ')[-1]
+        # word = line.strip().split(' ')[0]
+        # label = line.strip().split(' ')[-1]
         if contends.startswith("-DOCSTART-"):
           words.append('')
           continue
-        # if len(contends) == 0 and words[-1] == '。':
-        if len(contends) == 0:
-          l = ' '.join([label for label in labels if len(label) > 0])
-          w = ' '.join([word for word in words if len(word) > 0])
-          lines.append([l, w])
-          words = []
-          labels = []
-          continue
-        words.append(word)
-        labels.append(label)
-      return lines
+        tokens = contends.split(' ')
+        if len(tokens) == 2:
+            words.append(tokens[0])
+            labels.append(tokens[-1])
+        else:
+            # if len(contends) == 0 and words[-1] == '。':
+            if len(contends) == 0:
+              l = ' '.join([label for label in labels if len(label) > 0])
+              w = ' '.join([word for word in words if len(word) > 0])
+              lines.append([l, w])
+              words = []
+              labels = []
+              continue
+        # words.append(word)
+        # labels.append(label)
+      return lines 
 
 class NerProcessor(DataProcessor):
   def get_train_examples(self, data_dir):
