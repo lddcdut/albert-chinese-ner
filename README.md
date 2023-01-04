@@ -12,6 +12,8 @@
 ```python
 return ["O", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC", "X","[CLS]","[SEP]"]
 ```
+5、bert_config请使用下载模型中的congig文件
+
 这次的albert某种程度上可能比bert本身更具有意义，恰逢中文预训练模型出来，还是按照之前的数据来做NER方面的fine-tune
 
 PS: 移步传统[**bert ner**](https://github.com/ProHiryu/bert-chinese-ner)模型
