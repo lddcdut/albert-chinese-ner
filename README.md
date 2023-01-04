@@ -8,6 +8,10 @@
 
 3、模型下载链接：https://storage.googleapis.com/albert_zh/albert_base_zh_additional_36k_steps.zip
 
+4、替换数据集后，需要修改albert_ner.py的第240行，替换非常乐观自己的标签
+```python
+return ["O", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC", "X","[CLS]","[SEP]"]
+```
 这次的albert某种程度上可能比bert本身更具有意义，恰逢中文预训练模型出来，还是按照之前的数据来做NER方面的fine-tune
 
 PS: 移步传统[**bert ner**](https://github.com/ProHiryu/bert-chinese-ner)模型
