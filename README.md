@@ -8,7 +8,7 @@
 
 3、模型下载链接：https://storage.googleapis.com/albert_zh/albert_base_zh_additional_36k_steps.zip
 
-4、替换数据集后，需要修改albert_ner.py的第240行，替换非常乐观自己的标签
+4、替换数据集后，需要修改albert_ner.py的第240行，替换成自己的标签
 ```python
 return ["O", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC", "X","[CLS]","[SEP]"]
 ```
