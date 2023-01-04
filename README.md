@@ -2,6 +2,8 @@
 
 ## 前言
 
+1、改了部分代码，可以训练自己的数据集
+2、修改了部分逻辑，实体中存在空格不会直接报错
 这次的albert某种程度上可能比bert本身更具有意义，恰逢中文预训练模型出来，还是按照之前的数据来做NER方面的fine-tune
 
 PS: 移步传统[**bert ner**](https://github.com/ProHiryu/bert-chinese-ner)模型
